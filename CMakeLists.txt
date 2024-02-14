@@ -47,6 +47,13 @@ if (NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE Release)
 endif ()
 
+if (DEFINED ENV{DOCKERIZED})
+	message(STATUS "Running in docker")
+else ()
+	message(STATUS "Not running in docker")
+	add_compile_definitions(APZ_LOCAL_DEV)
+endif ()
+
 # Warnings as errors should be imported here -- do not move this line
 include(cmake/CompilerWarnings.cmake)
 

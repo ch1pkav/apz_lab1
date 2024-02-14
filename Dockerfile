@@ -16,6 +16,7 @@ RUN makepkg -si --noconfirm
 WORKDIR /
 user root
 RUN rm -rf crow
+ENV DOCKERIZED=1
 RUN ./compile.sh -O -d -R
 
 FROM base AS facade

@@ -13,9 +13,15 @@ namespace common {
     static constexpr std::size_t LOGGING_PORT = 18081;
     static constexpr std::size_t MESSAGE_PORT = 18082;
 
+#ifdef APZ_LOCAL_DEV
+    static constexpr std::string_view FACADE_ADDR = "http://0.0.0.0:18080/";
+    static constexpr std::string_view LOGGING_ADDR = "http://0.0.0.0:18081/";
+    static constexpr std::string_view MESSAGE_ADDR = "http://0.0.0.0:18082/";
+#else
     static constexpr std::string_view FACADE_ADDR = "http://lab1-facade-1:18080/";
     static constexpr std::string_view LOGGING_ADDR = "http://lab1-logging-1:18081/";
     static constexpr std::string_view MESSAGE_ADDR = "http://lab1-message-1:18082/";
+#endif
 
     enum res {
         OK = 200,
