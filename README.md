@@ -32,17 +32,17 @@ You can also run this architecture locally. For this, you need to install all th
 
 ### Compilation
 
-In the root directory:
+In the project root directory:
 
 ```{bash}
-cmake -B build; cd build; make
+./compile.sh
 ```
 ### Running
 
 To run any of the microservices, execute the corresponding binary
 
 ```{bash}
-./apz_facade
-./apz_message
-./apz_logging
+./bin/apz_facade
+./bin/apz_message
+./bin/apz_logging
 ```
