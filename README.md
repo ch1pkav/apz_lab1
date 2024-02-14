@@ -46,3 +46,9 @@ To run any of the microservices, execute the corresponding binary
 ./bin/apz_message
 ./bin/apz_logging
 ```
+
+NOTE: You may need to run the following prior to executing the microservice binaries:
+
+```{bash}
+export LD_LIBRARY_PATH=$PWD/lib64
+```
