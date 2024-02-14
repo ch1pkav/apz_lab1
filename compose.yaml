@@ -1,5 +1,8 @@
+name: apz
+
 services:
   facade:
+    #container-name: apz-facade
     build:
       target: facade
     ports: 
@@ -7,6 +10,7 @@ services:
     networks:
       - common-tier
   logging:
+    #container-name: apz-logging
     build:
       target: logging
     ports: 
@@ -14,6 +18,7 @@ services:
     networks:
       - common-tier
   message:
+    #container-name: apz-message
     build:
       target: message
     ports: 
