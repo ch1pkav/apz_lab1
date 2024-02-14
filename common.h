@@ -9,15 +9,13 @@
 #include <format>
 
 namespace common {
-    using namespace std::literals;
-
     static constexpr std::size_t FACADE_PORT = 18080;
     static constexpr std::size_t LOGGING_PORT = 18081;
     static constexpr std::size_t MESSAGE_PORT = 18082;
 
-    static constexpr std::string_view FACADE_ADDR = "http://localhost:18080";
-    static constexpr std::string_view LOGGING_ADDR = "http://localhost:18081";
-    static constexpr std::string_view MESSAGE_ADDR = "http://localhost:18082";
+    static constexpr std::string_view FACADE_ADDR = "http://lab1-facade-1:18080/";
+    static constexpr std::string_view LOGGING_ADDR = "http://lab1-logging-1:18081/";
+    static constexpr std::string_view MESSAGE_ADDR = "http://lab1-message-1:18082/";
 
     enum res {
         OK = 200,

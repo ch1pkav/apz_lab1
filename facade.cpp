@@ -17,17 +17,9 @@ int main() {
                 return crow::response(common::BAD_REQUEST);
 
             auto uuid_str = boost::uuids::to_string(uuid_generator());
-            std::string msg_str;
 
-            std::cout << uuid_str << " : " << msg << std::endl;
-
-            boost::char_separator<char> sep(" ");
-            boost::tokenizer<boost::char_separator<char>> tokens(std::string(msg), sep);
-            for (const auto& t : tokens) {
-                msg_str += t + "%20";
-            }
-
-            cpr::Post(cpr::Url{std::string(common::LOGGING_ADDR) + "?uuid=" + uuid_str + "&message=" + msg_str});
+            std::replace(msg, msg + strlen(msg), ' ', '+');
+            cpr::Post(cpr::Url{std::string(common::LOGGING_ADDR) + "?uuid=" + uuid_str + "&message=" + std::string(msg)});
 
             return crow::response(common::OK);
 
@@ -50,6 +42,8 @@ int main() {
             response.append(res.text);
 
             return crow::response(response);
+        } else {
+            return crow::response(common::BAD_REQUEST);
         }
     });
 

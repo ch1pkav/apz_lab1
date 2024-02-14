@@ -29,6 +29,8 @@ int main() {
             log[uuid] = message;
 
             return crow::response(common::OK);
+        } else {
+            return crow::response(common::BAD_REQUEST);
         }
     });
 

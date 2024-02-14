@@ -1,0 +1,25 @@
+services:
+  facade:
+    build:
+      target: facade
+    ports: 
+      - 127.0.0.1:18080:18080
+    networks:
+      - common-tier
+  logging:
+    build:
+      target: logging
+    ports: 
+      - 127.0.0.1:18081:18081
+    networks:
+      - common-tier
+  message:
+    build:
+      target: message
+    ports: 
+      - 127.0.0.1:18082:18082
+    networks:
+      - common-tier
+
+networks:
+  common-tier: {}
